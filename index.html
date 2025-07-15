@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+
+    </head>
+    <body>
+        <div id="ok">
+
+        </div>
+        <button id="okk">adicionar</button>
+        <script>
+             const videos=[
+                    "https://www.youtube.com/embed/Hh50ZQUnhic",
+                    "https://www.youtube.com/embed/zb4Cc_TuY1E", 
+                 ];  
+                 const container=document.getElementById('ok');
+                 const btn=document.getElementById('okk');
+                 let index=0;
+                 let limiteporvez=1;
+                 function inserir(){
+                    let fim =index+limiteporvez;
+                    for(;index<fim && index<videos.length;index++){
+                       const iframe=document.createElement('iframe');
+                       iframe.src=videos[index];
+                       container.appendChild(iframe);
+
+                    }
+                    if(index>=videos.length){
+                        btn.disabled=true;
+                        btn.textContent='chegou no limite';
+                    }
+
+                 }
+                 btn.addEventListener('click',inserir);
+                 inserir();
+               
+                 
+               
+        
+        </script>
+    </body>
+</html>
